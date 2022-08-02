@@ -1,0 +1,46 @@
+﻿<Application x:Class="WpfApp4.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfApp4"
+             xmlns:local1="clr-namespace:WpfApp4.Controller"
+             xmlns:local2="clr-namespace:WpfApp4.Entities"
+             StartupUri="LoginWindow.xaml">
+    <Application.Resources>
+        <!--<local1:StaffController x:Key="staff"/>
+        <ObjectDataProvider x:Key="viewableStaff"
+                            ObjectInstance="{StaticResource staff}"
+                            MethodName="GetViewableList">
+        </ObjectDataProvider>-->
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="./ScrollBar.xaml"/>
+                <ResourceDictionary Source="./StaffContactCard.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            
+            <local1:StaffController x:Key="staff"/>
+            <ObjectDataProvider x:Key="viewableStaff"
+                                ObjectInstance="{StaticResource staff}"
+                                MethodName="GetViewableList">
+            </ObjectDataProvider>
+            <local1:UnitController x:Key="unit"/>
+            <ObjectDataProvider x:Key="viewableUnits"
+                                ObjectInstance="{StaticResource unit}"
+                                MethodName="GetViewableUnits">
+            </ObjectDataProvider>
+
+            <local1:ConsController x:Key="consultation"/>
+            <ObjectDataProvider x:Key="viewableConsultations"
+                                ObjectInstance="{StaticResource consultation}"
+                                MethodName="GetViewableConsultations">
+            </ObjectDataProvider>
+            <local1:ClassController x:Key="class"/>
+            <ObjectDataProvider x:Key="viewableClasses"
+                                ObjectInstance="{StaticResource class}"
+                                MethodName="GetViewableClasses">
+                
+            </ObjectDataProvider>
+            
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>
